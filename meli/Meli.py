@@ -123,10 +123,8 @@ class Meli:
                     token.access_token_expires_at = retorno_access['expires_at']
                     token.save()
 
-                    # Salvar o token no Redis com o tempo de expiração
                     redis_client.set(token_key, access_token, ex=int(retorno_access['data']['expires_in']))
 
-                    # Atualize o access_token da instância atual de Meli
                     self.access_token = access_token
 
                 except ValidationError as e:
@@ -147,7 +145,7 @@ class Meli:
                     token.access_token_expires_at = retorno_access['expires_at']
                     token.save()
 
-                    # Atualize o access_token da instância atual de Meli
+
                     self.access_token = access_token
 
                 except ValidationError as e:

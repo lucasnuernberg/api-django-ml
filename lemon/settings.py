@@ -76,7 +76,6 @@ CORS_ORIGIN_WHITELIST = [
     'https://web-production-76cb.up.railway.app',
     'http://localhost:19006',
     'https://banana-hub-cp9243z63-donavanmarques.vercel.app',
-    'https://banana-hub-app.vercel.app',
     'https://lemon-hub-app.vercel.app'
 ]
 
@@ -100,7 +99,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://web-production-76cb.up.railway.app',
     'http://localhost:19006',
     'https://banana-hub-cp9243z63-donavanmarques.vercel.app',
-    'https://banana-hub-app.vercel.app',
     'https://lemon-hub-app.vercel.app'
 ]
 

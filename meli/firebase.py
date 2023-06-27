@@ -30,7 +30,6 @@ def send_push_notification_to_user(user_id, data):
                 print(f'Token inválido para o dispositivo: {device.id}')
             except firebase_admin._messaging_utils.UnregisteredError:
                 print(f'Token não registrado para o dispositivo: {device.id}')
-                # Aqui, você pode optar por excluir o dispositivo inválido da sua base de dados
                 device.delete()
 
         elif device.platform in ['android', 'ios']:
@@ -49,9 +48,6 @@ def send_push_notification_to_user(user_id, data):
             
             try:
                 response = requests.post(EXPO_PUSH_ENDPOINT, headers=headers, json=message)
-                print("=====================================================================")
-                print('Enviado a notificação para o aparelho:', device.id, device.platform, response.json())
-                print("=====================================================================")
             except Exception as e:
                 print(f'Erro ao enviar notificação para o dispositivo: {device.id}', str(e))
                 device.delete()
